@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const Blockchain = require('../blockchain');
 const P2pServer = require('./p2p-server');
 
@@ -17,6 +16,11 @@ app.get('/blocks', (req, res) => {
 
 app.post('/mine', (req, res) => {
   const block = bc.addBlock(req.body.data);
+  // console.log(`New block added: ${block.toString()}`);
+  console.log(`New block added`);
+
+  p2pServer.syncChains();
+
   res.redirect('/blocks');
 });
 
