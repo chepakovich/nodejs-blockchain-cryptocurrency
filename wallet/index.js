@@ -1,5 +1,5 @@
 const ChainUtil = require('../chain-util');
-const Transaction = require('./transaction');
+// const Transaction = require('./transaction');
 const { INITIAL_BALANCE } = require('../config');
 
 class Wallet {
@@ -29,16 +29,16 @@ class Wallet {
       return;
     }
 
-    let transaction = transactionPool.existingTransaction(this.publicKey);
+    // let transaction = transactionPool.existingTransaction(this.publicKey);
 
-    if (transaction) {
-      transaction.update(this, recipient, amount);
-    } else {
-      transaction = Transaction.newTransaction(this, recipient, amount);
-      transactionPool.updateOrAddTransaction(transaction);
-    }
+    // if (transaction) {
+    //   transaction.update(this, recipient, amount);
+    // } else {
+    //   transaction = Transaction.newTransaction(this, recipient, amount);
+    //   transactionPool.updateOrAddTransaction(transaction);
+    // }
 
-    return transaction;
+    // return transaction;
   }
 
   calculateBalance(blockchain) {

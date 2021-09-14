@@ -1,10 +1,14 @@
-const Block = require('./blockchain/block');
+// const Block = require('./blockchain/block');
 
-const fooBlock = Block.mineBlock(Block.genesis(), 'foo');
-console.log(fooBlock.toString());
+// const fooBlock = Block.mineBlock(Block.genesis(), 'foo');
+// console.log(fooBlock.toString());
 
 /*
 const block = new Block ('foo', 'bar', 'zoo', 'baz');
 console.log(block.toString());
 console.log(Block.genesis().toString());
 */
+
+const Wallet = require('./wallet');
+const wallet = new Wallet();
+console.log(wallet.toString());
