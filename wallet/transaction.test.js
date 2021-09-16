@@ -74,20 +74,20 @@ describe('Transaction', () => {
     });
   });
 
-  // describe('creating a reward transaction', () => {
-  //   beforeEach(() => {
-  //     transaction = Transaction.rewardTransaction(
-  //       wallet,
-  //       Wallet.blockchainWallet()
-  //     );
-  //   });
+  describe('creating a reward transaction', () => {
+    beforeEach(() => {
+      transaction = Transaction.rewardTransaction(
+        wallet,
+        Wallet.blockchainWallet()
+      );
+    });
 
-  //   it(`reward the miner's wallet`, () => {
-  //     expect(
-  //       transaction.outputs.find(
-  //         (output) => output.address === wallet.publicKey
-  //       ).amount
-  //     ).toEqual(MINING_REWARD);
-  //   });
-  // });
+    it(`reward the miner's wallet`, () => {
+      expect(
+        transaction.outputs.find(
+          (output) => output.address === wallet.publicKey
+        ).amount
+      ).toEqual(MINING_REWARD);
+    });
+  });
 });
